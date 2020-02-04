@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <title>Ders 15</title>
+</head>
+
+<body>
+    <h1>Ders 15</h1>
+    <h3>txt'den html'e ajax ile veri geçirmek</h3>
+    <p id="deneme">Buraya getirilecek</p>
+    <button onclick="func()">Veriyi Getir</button>
+</body>
+
+
+<script>
+
+    function func() {
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function () {
+            if (this.status == 200 && this.readyState == 4) {
+                document.getElementById("deneme").innerHTML = this.responseText;
+
+            }
+        }
+        xhttp.open("GET", "yazi.txt", true);
+        xhttp.send();
+    }
+
+
+</script>
+
+</html>

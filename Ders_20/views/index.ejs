@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    
+    <form action="/login" method="POST">
+        Kullanici Adi : <input type="text" name="ad" placeholder="Kullanici Adini Giriniz">
+        Sifre : <input type="text" name="sifre"placeholder="Sifreyi Giriniz">
+        <input type="submit" name="btn " id="btn" value="Giriş">
+    </form>
+
+    <h3>Girilen Ad : <%= typeof dataAdi!='undefined' ? dataAdi : ''%></h3>
+    <h3>Girilen Sifre : <%= typeof dataSifre!='undefined' ? dataSifre : ''%></h3>
+
+</body>
+</html>

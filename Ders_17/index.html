@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ajax</title>
+</head>
+<body>  
+
+    <form action="/enter" method="POST">
+        Kullanici Adi : <input type="text" name="ad" id="">
+        Sifre : <input type="text" name="sifre"><br>
+        <input type="submit" value="Giriş" onclick="f1()">
+    </form>
+    <p id="bilgiler"></p>
+
+    <script>
+        
+        function f1(){
+            var xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function(){
+                if(this.status == 200 && this.readyState == 4){
+                    document.getElementById("bilgiler").innerHTML = this.responseText;
+                    console.log("bilgiler : " + this.responseText);
+                }
+            }
+            xhttp.open("GET", "/enter", true);
+            xhttp.send();
+        }
+        
+    </script>
+
+</body>
+</html>

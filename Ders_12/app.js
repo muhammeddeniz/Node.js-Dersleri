@@ -1,5 +1,4 @@
-var express = require("express");
-var app = express();
+var app = require("express")();
 var router = require("./controller");
 var path = require("path");
 
